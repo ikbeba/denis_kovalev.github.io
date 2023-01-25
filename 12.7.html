@@ -1,0 +1,375 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,700;1,400;1,700&display=swap"
+          rel="stylesheet">
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            let container = document.querySelector('.popup-container')
+            let popup_button = document.querySelector('.popup-button')
+            let popupButtons = document.querySelectorAll('.open-popup');
+            for (let i = 0; i < popupButtons.length; i++) {
+                popupButtons[i].addEventListener('click', function () {
+                    container.style.display = 'flex';
+                });
+            }
+            container.addEventListener('click', function (event) {
+                if (event.target === container || event.target === popup_button) {
+                    container.style.display = 'none';
+                }
+            });
+        });
+
+    </script>
+    <style>
+
+        * {
+            font-family: 'Roboto', sans-serif;
+        }
+
+        html, body {
+            margin: 0;
+            padding: 0;
+            background-color: #f6f7f9;
+        }
+
+        header {
+            height: 100px;
+            padding: 0 40px;
+        }
+
+        header > div {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .header-a {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .header-a > div {
+            margin-right: 30px;
+        }
+
+        .number {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .number > div {
+            margin-left: 30px;
+        }
+
+        a {
+            text-decoration: none;
+            color: #212121;
+        }
+
+        a:hover {
+            text-decoration: underline;
+            color: #3f2aff;
+        }
+
+        .fixed-container {
+            max-width: 1500px;
+            height: 100%;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        section {
+            padding: 40px;
+        }
+
+        .first-block {
+            height: 400px;
+        }
+
+        .first-block > div {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: flex-start;
+            background-image: url('man.png');
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: right center;
+            max-width: 1500px;
+            height: 100%;
+            margin-left: auto;
+            margin-right: auto;
+            padding: 40px;
+        }
+
+        .big-text {
+            font-size: xxx-large;
+            margin: 15px 0;
+        }
+
+        .small-text {
+            font-size: small;
+        }
+
+        .services {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 30px;
+        }
+
+        .services img {
+            width: 110px;
+            margin-bottom: 30px;
+        }
+
+        .services > div {
+            width: 250px;
+        }
+
+        .work-examples {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 30px;
+        }
+
+        .work-examples img {
+            width: 350px;
+        }
+
+        .work-examples > div {
+            width: 350px;
+        }
+
+        .price-info {
+            background-color: #3f2aff;
+            color: #f6f7f9;
+        }
+
+        .light-button {
+            border: 1px solid gray;
+            background-color: transparent;
+        }
+
+        .price-info-text {
+            font-size: xx-large;
+            width: 36%;
+        }
+
+        .price-info-size-p {
+            font-size: x-small;
+            width: 30%;
+        }
+
+        .dark-button {
+            border: 1px solid gray;
+            background-color: #3f2aff;
+            color: #f6f7f9;
+        }
+
+        button {
+            padding: 10px 30px;
+            cursor: pointer;
+            border-radius: 10px;
+        }
+
+        footer {
+            height: 100px;
+            padding: 40px 40px;
+
+        }
+
+        footer > div {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .footer-img {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 10px;
+            height: 20px;
+            width: 180px;
+        }
+
+        .footer-img img {
+            height: 15px;
+        }
+
+        .footer-a {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .footer-a > div {
+            margin: 5px;
+        }
+
+        .footer-center {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .footer-center > div {
+            margin: 5px;
+        }
+
+        .popup-container {
+            background-color: #000000b4;
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            display: none;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .popup {
+            background-color: #f6f7f9;
+            width: 300px;
+            height: 300px;
+            padding: 30px;
+            border-radius: 10px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .popup > div {
+            margin-top: 20px;
+        }
+
+        .popup > div > input {
+            height: 35px;
+            width: 230px;
+            border-radius: 9px;
+            border: 1px solid gray;
+
+        }
+
+        .popup-button {
+            margin-top: 70px;
+            margin-bottom: 10px;
+        }
+
+    </style>
+</head>
+<body>
+<div class="popup-container">
+    <form class="popup">
+        <div><input type="text" placeholder="Введите ваше имя"></div>
+        <div><input type="text" placeholder="Введите ваш Email"></div>
+        <button class="dark-button popup-button">Отправить</button>
+    </form>
+</div>
+<header>
+    <div class="fixed-container">
+        <div class="header-a">
+            <div><a href="#">Услуги</a></div>
+            <div><a href="#">Портфолио</a></div>
+            <div><a href="#">Стоимость</a></div>
+        </div>
+        <div class="number">
+            <div><span>+7 (499) 995-55-77</span></div>
+            <div>
+                <button class="light-button open-popup">Заказать звонок</button>
+            </div>
+        </div>
+    </div>
+</header>
+<section class="fixed-container">
+    <div class="first-block">
+        <div>
+
+            <h1 class="big-text">Дмитрий Алексеев</h1>
+            <p class="small-text">Frontend-разработчик и веб-верстальщик</p>
+            <button class="dark-button open-popup">Узнать больше</button>
+        </div>
+    </div>
+</section>
+<section>
+    <div class="fixed-container">
+        <h2>Что я делаю</h2>
+        <div class="services">
+            <div>
+                <img src="1.png" alt=""><br/>
+                Вёрстка лендинг-страниц и сайтов любой сложности
+            </div>
+            <div>
+                <img src="2.png" alt=""><br/>
+                Адаптивная вёрстка под все браузеры и устроистава
+            </div>
+            <div>
+                <img src="3.png" alt=""><br/>
+                Frontend-разработка и программирование
+            </div>
+            <div>
+                <img src="4.png" alt=""><br/>
+                Исправление и доработка существующей вёрстки
+            </div>
+        </div>
+        <button class="light-button open-popup">Узнать стоимость</button>
+    </div>
+</section>
+<section>
+    <div class="fixed-container">
+        <h2>Примеры работ</h2>
+        <div class="work-examples">
+            <div>
+                <img src="e1.png" alt="">
+                Сайт психолога Веры Антоновой
+            </div>
+            <div>
+                <img src="e2.png" alt="">
+                Сайт магазина детской одежды
+            </div>
+            <div>
+                <img src="e3.png" alt="">
+                Сайт магазина <<Рыболов>>
+            </div>
+        </div>
+        <button class="light-button open-popup">Закзать проект</button>
+    </div>
+</section>
+<section class="price-info">
+    <div class="fixed-container">
+        <h2 class="price-info-text">Адаптивная вёрстка под все устройства и браузеры от 1000 Р всего за 4 часа.*</h2>
+        <p class="price-info-size-p">*Срок и стоимость могут отличаться от заявленных и рассчитываются индивидуально, в
+            зависимости от сложности задач.</p>
+    </div>
+</section>
+<footer>
+    <div class="fixed-container">
+        <div class="footer-a">
+            <div><a href="#">Услуги</a><br/></div>
+            <div><a href="#">Портфолио</a><br/></div>
+            <div><a href="#">Стоимость</a></div>
+        </div>
+        <div class="footer-center">
+            <div><a>dmirty@alekseev.com</a></div>
+            <div>+7 (499) 995 77 55</div>
+        </div>
+        <div>
+            <button class="light-button open-popup">Заказать звонок</button>
+            <div class="footer-img">
+                <div><img src="fb.png" alt=""></div>
+                <div><img src="vk.png" alt=""></div>
+                <div><img src="you.png" alt=""></div>
+                <div><img src="telegram.png" alt=""></div>
+                <div><img src="inst.png" alt=""></div>
+            </div>
+        </div>
+    </div>
+</footer>
+</body>
+</html>
